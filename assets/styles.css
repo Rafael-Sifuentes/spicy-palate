@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Frijole&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* VARIABLE CSS================================================================================- */
 /*-============================================================================================- */
 :root{
 
     /* COLORS=---------------- */
-    --primary-color: #FF0000;
-    --accent-color: #212121;
-    --text-color-w: #D9D9D9;
-    --text-color-b: #212121;
-    --container-color: #262626;
-    --body-color: #F5F5F5;
+    --primary-color: #B10D09;
+    --accent-color: #6F0300;
+    --text-color-w: #FFF0E6;
+    --text-color-b: #141414;
+    --container-color: #8BC002;
+    --body-color: #141414;
     /* ======================= */
 
 
     /* FONT & TYPOGRAPHY====== */
     --body-font: 'Montserrat', sans-serif;
-
+    --title-font: 'Frijole', system-ui;
     --h1-font-size: 5.61rem;
     --h2-font-size: 4.209rem;
     --h3-font-size: 3.157rem;
@@ -72,7 +72,9 @@ html{
 
 body{
     font-family: var(--body-font);
-    background-color: var(--body-color);
+    background-image: url('img/texture-2.jpg');
+    background-repeat: repeat;
+    background-size: auto;
 }
 
 h1{
@@ -89,7 +91,6 @@ h3{
 
 h4{
     font-size: var(--h4-font-size);
-    font-weight: var(--font-light);
 }
 
 h5{
@@ -143,7 +144,7 @@ img{
     }
 }
 
-/* FOR TABLE  */
+/* FOR TABLET */
 @media screen and (min-width: 744px){
     .container{
         max-width: 680px;
@@ -154,14 +155,13 @@ img{
 /* FOR DESKTOP */
 @media screen and (min-width: 1100px){
     .container{
-        max-width: 1080px;
+        max-width: 1392px;
         margin: 0 auto;
     }
 }
 /*-============================================================================================- */
 
 /*-REUSABLE CSS CLASSES========================================================================- */
-
 .flex-column{
     display: flex;
     flex-direction: column;
@@ -178,34 +178,71 @@ img{
 
 .section{
     position: relative;
-    padding-bottom: 8rem;
     overflow: hidden;
+}
+
+.section-title{
+    font-size: var(--h2-font-size);
+    font-family: var(--title-font);
 }
 
 .p-text{
     font-size: var(--normal-font-size);
-    font-weight: var(--font-medium);
+    font-weight: var(--font-semi-bold);
 }
 
 .transition{
     transition: all .4s ease-in-out;
+}
+
+.br-1{
+    border-radius: 32px 80px 80px 32px;
+}
+
+.br-2{
+    border-radius: 80px 32px 32px 80px;
 }
 /*-============================================================================================- */
 
 /* CSS COMPONENTS =============================================================================- */
 
 /* BUTTONS */
-button{
-    width: 252px;
-    height: 64px;
+
+.button{
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    height: 80px;
+    width: 330px;
+    border-radius: 64px;
+    background-color: var(--primary-color);
+    color: var(--text-color-w);
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    transition: all .3s ease-in-out;
 }
 
-button p{
-    font-size: var(--normal-font-size);
-    font-weight: var(--font-semi-bold);
+.button:active{
+    left: 0;
+    bottom: 0;
+}
+
+.button p{
+    font-family: var(--title-font);
+    font-size: var(--h6-font-size);
+}
+
+.button a{
+    color: var(--text-color-w);
+}
+
+.button-wrapper{
+    position: relative;
+    height: 80px;
+    width: 330px;
+    background-color: var(--accent-color);
+    border-radius: 64px;
 }
 /* -------- */
 
@@ -213,38 +250,871 @@ button p{
 
 
 /* HOME SECTION ===============================================================================- */
-
-/* FOR MOBILE */
-@media screen and (min-width: 390px){
-    
-    h2{
-        font-size: var(--h4-font-size);
-    }
-
-    h4{
-        font-size: var(--normal-font-size);
-    }
+.home{
+    padding-bottom: var(--gap-6);
 }
 
-body{
-    padding-top: 50vh;
-    display: flex;
-    flex-direction: column;
+.home-container{
+    color: var(--text-color-w);
+    text-align: center;
     align-items: center;
+}
+
+.home-logo-container{
+    height: 127px;
+    width: 98px;
+    position: relative;
+    margin-bottom: var(--gap-2);
+}
+
+.home-title{
+    font-size: var(--h2-font-size);
+    font-family: var(--title-font);
+    margin-bottom: var(--gap-2);
+    letter-spacing: 5px;
+}
+
+.home-subtitle{
+    font-size: var(--h5-font-size);
+    margin-bottom: var(--gap-6);
+    letter-spacing: 1.5px;
+}
+
+.home-background img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.home::before{
+    content: ''; /* Required for pseudo-elements */
+    position: absolute;
+    bottom: 0; /* Position at the very top of the section */
+    width: 100%;
+    height: 40px; /* Adjust this to control the height of your separator's peaks/valleys */
+    
+    /* Apply your background texture */
+    background-image: url('img/texture-1.jpg'); 
+    background-repeat: repeat; /* Tile the texture across the separator */
+    background-size: auto; /* Uses the texture's original size for tiling */
+    z-index: 1;
+    clip-path: polygon(
+        0% 100%,   /* Bottom-left corner */
+        100% 100%, /* Bottom-right corner */
+        100% 0%,   /* Top-right corner */
+        85% 85%,   /* Point 1 for zigzag (adjust % to change steepness/width of triangles) */
+        70% 0%,    /* Point 2 for zigzag */
+        55% 85%,   /* Point 3 */
+        40% 0%,    /* Point 4 */
+        25% 85%,   /* Point 5 */
+        10% 0%,    /* Point 6 */
+        0% 100%    /* Back to origin, closing the zig-zag */
+    );
+}
+/*-============================================================================================- */
+
+/* INTRO SECTION ==============================================================================- */
+.intro{
+    position: relative;
+    background-image: url('img/texture-1.jpg');
+    background-repeat: repeat;
+    background-size: auto;
+    color: var(--text-color-b);
+    padding: 88px 0 var(--gap-6);
+}
+
+.intro-container{
     justify-content: center;
-    background-color: #0E0A18;
-    color: #E9DFE0;
-    gap: var(--gap-2);
+    align-items: center;
+}
+
+.intro-title{
+    text-align: center;
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--gap-4);
+}
+
+.intro-subtitle{
+    text-align: center;
+    font-size: var(--h6-font-size);
+    margin-bottom: var(--gap-7);
+}
+
+.intro-alt-title{
+    font-family: var(--title-font);
+    font-size: var(--h5-font-size);
+    margin-bottom: var(--gap-4);
+    letter-spacing: 5px;
     text-align: center;
 }
 
-p{
+.meter-container{
+    justify-self: center;
+    width: 358px;
+    margin-bottom: var(--gap-6);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.meter-container li{
+    position: relative;
+    height: 60px;
+    width: 60px;
+}
+
+.meter-container li:nth-child(1){
+    border-radius: 48px 0 0 48px;
+    background-color: #8BC002;
+}
+
+.meter-container li:nth-child(2){
+    background-color: #C0A102;
+}
+
+.meter-container li:nth-child(3){
+    background-color: #C06E02;
+}
+
+.meter-container li:nth-child(4){
+    background-color: #B10D09;
+}
+
+.meter-container li:nth-child(5){
+    border-radius: 0 48px 48px 0;
+    background-color: #6F0300;
+}
+
+.meter-container span{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+    color: var(--text-color-b);
+    font-family: var(--title-font);
+    font-size: var(--h5-font-size);
+}
+
+
+/*-============================================================================================- */
+
+/* PALATE SECTION =============================================================================- */
+.palate::after{
+    content: ''; 
+    position: absolute;
+    top: 0px; 
+    width: 100%;
+    height: 40px; 
+    
+    background-image: url('img/texture-1.jpg'); 
+    background-repeat: repeat;
+    background-size: auto; 
+    z-index: 1;
+
+    clip-path: polygon(
+        0% 0%,     /* Top-left corner */
+        100% 0%,   /* Top-right corner */
+        100% 100%, /* Bottom-right corner */
+        85% 15%,   /* Point 1 for zigzag (adjust % to change steepness/width of triangles) */
+        70% 100%,  /* Point 2 for zigzag */
+        55% 15%,   /* Point 3 */
+        40% 100%,  /* Point 4 */
+        25% 15%,   /* Point 5 */
+        10% 100%,  /* Point 6 */
+        0% 0%      /* Back to origin, closing the zig-zag. Keep this point to make it connected to the top-left */
+    );
+}
+
+.palate::before{
+    content: ''; /* Required for pseudo-elements */
+    position: absolute;
+    bottom: 0; /* Position at the very top of the section */
+    width: 100%;
+    height: 40px; /* Adjust this to control the height of your separator's peaks/valleys */
+    
+    /* Apply your background texture */
+    background-image: url('img/texture-1.jpg'); 
+    background-repeat: repeat; /* Tile the texture across the separator */
+    background-size: auto; /* Uses the texture's original size for tiling */
+    z-index: 1;
+    clip-path: polygon(
+        0% 100%,   /* Bottom-left corner */
+        100% 100%, /* Bottom-right corner */
+        100% 0%,   /* Top-right corner */
+        85% 85%,   /* Point 1 for zigzag (adjust % to change steepness/width of triangles) */
+        70% 0%,    /* Point 2 for zigzag */
+        55% 85%,   /* Point 3 */
+        40% 0%,    /* Point 4 */
+        25% 85%,   /* Point 5 */
+        10% 0%,    /* Point 6 */
+        0% 100%    /* Back to origin, closing the zig-zag */
+    );
+}
+
+.palate{
+    padding: var(--gap-7) 0;
+}
+
+.palate-container{
+    gap: var(--gap-6);
+}
+
+.salsa-card-container{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-6);
+}
+
+.salsa-frame{
+    height: 358px;
+    width: 358px;
+    position: relative;
+    overflow: hidden;
+}
+
+.salsa-frame-toggle{
+    position: absolute;
+    top: 0;
+    left: -100%;
+    z-index: 5;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-image: url(img/texture-1.jpg);
+    opacity: 0;
+    gap: var(--gap-2);
+    padding: 65px var(--gap-2);
+}
+
+.salsa-frame-toggle.toggled{
+    left: 0;
+    opacity: 1;
+}
+
+.salsa-info-frame{
     color: var(--text-color-w);
 }
 
-.img-container{
-    width: 150px;
-    height: 150px;
+.salsa-info-title{
+    font-size: var(--h3-font-size);
+    font-family: var(--title-font);
+    margin-bottom: var(--gap-2);
+}
+
+.salsa-meter-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--gap-4);
+    align-items: center;
+}
+
+.salsa-meter-container ul{
+    max-width: 304px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.salsa-meter-container ul li{
+    height: 48px;
+    width: 48px;
+    background-color: var(--text-color-w);
+    position: relative;
+    z-index: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.salsa-meter-container li:nth-child(1){
+    border-radius: 8px 0 0 8px;
+}
+
+.salsa-meter-container li:nth-child(5){
+    border-radius: 0 8px 8px 0;
+}
+
+.salsa-meter-container span{
+    font-family: var(--title-font);
+    font-size: var(--h4-font-size);
+}
+
+.sq{
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    top: 0;
+    left: 0;
+}
+
+.sq.lvl-1{
+    background-color: #8BC002;
+}
+
+.sq.lvl-2{
+    background-color: #C0A102;
+}
+
+.sq.lvl-3{
+    background-color: #C06E02;
+}
+
+.sq.lvl-4{
+    background-color: #B10D09;
+}
+
+.sq.lvl-5{
+    background-color: #6F0300;
+}
+
+.txt-al-l{
+    text-align: end;
+}
+
+.title-1{
+    color: #8BC002;
+}
+
+.title-2{
+    color: #B10D09;
+}
+
+.title-3{
+    color: #C06E02;
+}
+
+.salsa-toggle-title{
+    font-family: var(--title-font);
+    font-size: var(--h5-font-size);
+}
+
+.salsa-frame-toggle ul{
+    gap: var(--gap-2);
+}
+
+.salsa-frame-toggle h5{
+    font-size: var(--h6-font-size);
+}
+
+.salsa-toggle-btn{
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    z-index: 8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.salsa-toggle-btn i{
+    font-size: 2rem;
+    color: var(--text-color-w);
+}
+
+.salsa-toggle-btn.toggled{
+    transform: rotate(45deg);
+    bottom: 0;
+    left: 0;
+    transition: all .4s ease-in-out;
+}
+
+.toggle-btn-wrapper{
+    position: absolute;
+    bottom: 32px;
+    right: 32px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    z-index: 8;
+    height: 64px;
+    width: 64px;
+}
+/*-============================================================================================- */
+
+/* ABOUT SECTION ==============================================================================- */
+.about{
+    background-image: url('img/texture-1.jpg');
+    background-repeat: repeat;
+    background-size: auto;
+    color: var(--text-color-b);
+    padding: 88px 0 var(--gap-6);
+}
+
+.about-container{
+    gap: var(--gap-6);
+}
+
+.about-frames-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--gap-6);
+}
+
+.about-img-container{
+    width: 358px;
+    height: 433px;
+    position: relative;
+    overflow: hidden;
+    border: 4px solid var(--text-color-b);
+}
+
+.about-img-container img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.about-frame-one{
+    gap: var(--gap-4);
+}
+
+.about-description{
+    font-size: var(--h6-font-size);
+}
+
+.about-button{
+    align-self: center;
+}
+
+/*-============================================================================================- */
+
+/* CONTACT SECTION ============================================================================- */
+.contact{
+    color: var(--text-color-w);
+    padding: var(--gap-7) 0;
+}
+
+.contact::after{
+    content: ''; 
+    position: absolute;
+    top: 0px; 
+    width: 100%;
+    height: 40px; 
+    
+    background-image: url('img/texture-1.jpg'); 
+    background-repeat: repeat;
+    background-size: auto; 
+    z-index: 1;
+
+    clip-path: polygon(
+        0% 0%,     /* Top-left corner */
+        100% 0%,   /* Top-right corner */
+        100% 100%, /* Bottom-right corner */
+        85% 15%,   /* Point 1 for zigzag (adjust % to change steepness/width of triangles) */
+        70% 100%,  /* Point 2 for zigzag */
+        55% 15%,   /* Point 3 */
+        40% 100%,  /* Point 4 */
+        25% 15%,   /* Point 5 */
+        10% 100%,  /* Point 6 */
+        0% 0%      /* Back to origin, closing the zig-zag. Keep this point to make it connected to the top-left */
+    );
+}
+
+.contact-title{
+    margin-bottom: var(--gap-4);
+}
+
+.contact-title span{
+    font-size: var(--h4-font-size);
+}
+
+.contact-subtitle{
+    margin-bottom: var(--gap-6);
+}
+
+.contact-buttons-container{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2);
+    align-items: center;
+}
+
+.contact-button{
+    background-color: var(--container-color);
+}
+
+.contact-buttons-container .button-wrapper{
+    background-color: #3C5400;
+}
+
+.contact-button p{
+    color: var(--text-color-b);
+}
+
+.social-links{
+    display: flex;
+    gap: var(--gap-4);
+}
+
+.social-link i{
+    font-size: 4rem;
+    color: var(--text-color-w);
+}
+
+.locations-container{
+    width: 100%;
+    gap: var(--gap-2);
+    margin-top: var(--gap-7);
+}
+
+.locations-container .location-card:nth-child(1){
+    border-radius: 32px 32px 8px 8px;
+}
+
+.location-card:nth-child(2){
+    border-radius: 8px;
+}
+
+.location-card:nth-child(3){
+    border-radius: 8px 8px 32px 32px;
+}
+
+.location-card{
+    height: 420px;
+    background-image: url(img/texture-1.jpg);
+    text-align: center;
+    gap: var(--gap-2);
+    color: var(--text-color-b);
+    padding: 0 2rem;
+    justify-content: center;
+}
+
+.location-date{
+    font-family: var(--title-font);
+    font-size: var(--h4-font-size);
+}
+
+.location-address{
+    font-weight: var(--font-medium);
+}
+
+.location-time{
+    font-family: var(--title-font);
+    font-size: var(--h6-font-size);
+}
+
+.contact::before{
+    content: ''; /* Required for pseudo-elements */
+    position: absolute;
+    bottom: 0; /* Position at the very top of the section */
+    width: 100%;
+    height: 40px; /* Adjust this to control the height of your separator's peaks/valleys */
+    
+    /* Apply your background texture */
+    background-image: url('img/texture-1.jpg'); 
+    background-repeat: repeat; /* Tile the texture across the separator */
+    background-size: auto; /* Uses the texture's original size for tiling */
+    z-index: 1;
+    clip-path: polygon(
+        0% 100%,   /* Bottom-left corner */
+        100% 100%, /* Bottom-right corner */
+        100% 0%,   /* Top-right corner */
+        85% 85%,   /* Point 1 for zigzag (adjust % to change steepness/width of triangles) */
+        70% 0%,    /* Point 2 for zigzag */
+        55% 85%,   /* Point 3 */
+        40% 0%,    /* Point 4 */
+        25% 85%,   /* Point 5 */
+        10% 0%,    /* Point 6 */
+        0% 100%    /* Back to origin, closing the zig-zag */
+    );
+}
+/*-============================================================================================- */
+
+/* FOOTER SECTION =============================================================================- */
+.footer{
+    position: relative;
+    background-image: url('img/texture-1.jpg');
+    background-repeat: repeat;
+    background-size: auto;
+    color: var(--text-color-b);
+    padding: 88px 0 var(--gap-2);
+}
+
+.footer-container{
+    gap: var(--gap-4);
+    align-items: center;
+    text-align: center;
+}
+
+.footer-img-container{
+    position: relative;
+    height: 130px;
+    width: 105px;
+}
+
+.footer-title{
+    font-family: var(--title-font);
+    font-size: var(--h4-font-size);
+}
+
+.etx-signature{
+    border-top: 1px solid var(--text-color-b);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: var(--gap-2);
+}
+
+.etx-signature a{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-color-b) !important;
+}
+
+.etx-signature p{
+    font-size: var(--small-font-size);
+}
+
+.etx-signature .img-container{
+    width: 28px;
+    height: 24px;
     position: relative;
 }
 /*-============================================================================================- */
+
+/* SECTION ====================================================================================- */
+
+/*-============================================================================================- */
+
+/* SECTION ====================================================================================- */
+
+/*-============================================================================================- */
+
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE BREAKPOINTS =====================================================================- */
+@media screen and (max-width: 390px){
+    .section-title{
+        font-size: var(--h3-font-size);
+    }
+}
+
+/* TABLET */
+@media screen and (min-width: 744px){
+
+    /* REUSABLE CLASSES */
+    .section-title{
+        font-size: var(--h2-font-size);
+    }
+
+    /* HOME SECTION */
+    .home-title{
+        margin-bottom: var(--gap-2);
+        font-size: var(--h2-font-size);
+    }
+
+    .home-subtitle{
+        font-size: var(--h4-font-size);
+    }
+
+    /* INTRO SECTION */
+    .intro-subtitle{
+        font-size: var(--h5-font-size);
+        margin-bottom: var(--gap-6);
+    }
+
+    .meter-container{
+        width: 566px;
+    }
+
+    .meter-container li{
+        height: 94px;
+        width: 94px;
+    }
+
+    /* PALATE SECTION */
+    .flex-end{
+        align-self: flex-end;
+    }
+
+    .flex-align-right{
+        align-self: flex-end;
+    }
+
+    .salsa-meter-container{
+        width: 347px;
+    }
+
+    /* ABOUT SECTION */
+    .about-description{
+        width: 566px;
+        align-self: flex-end;
+    }
+
+    /* CONTACT SECTION */
+    .locations-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-title span{
+        font-size: var(--h2-font-size);
+    }
+
+    .contact-subtitle{
+        align-self: flex-end;
+        width: 680px;
+    }
+
+    .contact-buttons-container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .locations-container .location-card:nth-child(1){
+        border-radius: 32px 8px 8px 8px;
+    }
+    
+    .location-card:nth-child(2){
+        border-radius: 8px 32px 32px 8px;
+    }
+    
+    .location-card:nth-child(3){
+        border-radius: 8px 8px 32px 32px;
+    }
+
+    .footer-title{
+        font-size: var(--h3-font-size);
+    }
+
+    .etx-signature p{
+        font-size: var(--normal-font-size);
+    }
+    
+}
+
+
+/* DESKTOP */
+@media screen and (min-width: 1100px){
+
+    /* REUSABLE CLASSES */
+   
+
+    /* HOME */
+    .home{
+        padding-top: 250px;
+    }
+    
+
+    /* INTRO SECTION */
+    
+
+    /* PALATE SECTION */
+    .salsa-card-container{
+        flex-direction: row;
+        gap: var(--gap-2);
+    }
+
+    .salsa-frame{
+        height: 684px;
+        width: 684px;
+    }
+
+    .salsa-info-frame{
+        height: 684px;
+        width: 684px;
+        justify-content: center;
+        padding-right: 59px;
+        padding-left: 59px;
+    }
+
+    .salsa-info-title{
+        font-size: var(--h2-font-size);
+        margin-bottom: var(--gap-4);
+    }
+
+    .salsa-toggle-title{
+        font-size: var(--h4-font-size);
+    }
+
+    .salsa-frame-toggle h5{
+        font-size: var(--h5-font-size);
+    }
+
+    .salsa-frame-toggle{
+        width: 100%;
+        justify-content: center;
+        padding-left: var(--gap-6);
+    }
+
+    .salsa-toggle-btn{
+        height: 96px;
+        width: 96px;
+    }
+
+    .salsa-toggle-btn i{
+        font-size: var(--gap-4);
+    }
+
+    .toggle-btn-wrapper{
+        right: 48px;
+        bottom: 48px;
+        height: 96px;
+        width: 96px;
+    }
+
+    .row-reverse{
+        flex-direction: row-reverse;
+    }
+
+    /* ABOUT SECTION */
+    .about-frames-container{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .about-img-container{
+        height: 684px;
+        width: 684px;
+    }
+
+    .about-description{
+        font-size: var(--h5-font-size);
+    }
+
+    .about-button{
+        align-self: flex-end;
+    }
+
+    /* CONTACT SECTION */
+    .locations-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contact-subtitle{
+        width: 786px;
+    }
+
+    .locations-container .location-card:nth-child(1){
+        border-radius: 32px 8px 8px 32px;
+    }
+    
+    .location-card:nth-child(2){
+        border-radius: 8px;
+    }
+    
+    .location-card:nth-child(3){
+        border-radius: 8px 32px 32px 8px;
+    }
+
+    /* SECTION */
+    
+
+    /* SECTION */
+    
+}
