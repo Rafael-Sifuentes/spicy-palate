@@ -4,6 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "The Spicy Palate",
+          "image": "https://spicy-palate.com/assets/img/logo.png",
+          "description": "At The Spicy Palate, our passion is creating authentic Mexican salsas that tell a story with every bite. Handcrafted in small batches using time-honored techniques and quality ingredients.",
+          "url": "https://spicy-palate.com",
+          "email": "contact@spicy-palate.com",
+          "logo": "https://spicy-palate.com/assets/img/logo.png",
+          "sameAs": [
+            "https://www.instagram.com/thespicypalateusa",
+            "https://www.facebook.com/thespicypalateusa"
+          ],
+          "founder": {
+            "@type": "Person",
+            "name": "Judith"
+          },
+          "brand": {
+            "@type": "Brand",
+            "name": "The Spicy Palate"
+          },
+          "product": [
+            {
+              "@type": "Product",
+              "name": "Salsa Verde",
+              "description": "A bright and tangy blend of fresh tomatillos, lime, and green chilies. Great for tacos, dips, and stews.",
+              "image": "https://spicy-palate.com/assets/img/salsa-img-1.png"
+            },
+            {
+              "@type": "Product",
+              "name": "Salsa Roja",
+              "description": "Made with ripe red tomatoes, dried chilies, and spices. Perfect for chips, tacos, or enchiladas.",
+              "image": "https://spicy-palate.com/assets/img/salsa-img-2.png"
+            },
+            {
+              "@type": "Product",
+              "name": "Fuego Mango",
+              "description": "Sweet mango meets fiery Manzano and scotch bonnet peppers. Great with grilled meats or snacks.",
+              "image": "https://spicy-palate.com/assets/img/salsa-img-1.png"
+            }
+          ],
+          
+        }
+    </script>
+        
     <!-- FAVICON -->
     <link rel="shortcut icon" href="assets/IMG/Favicon.png" type="image/x-icon">
     <!-- REMIX ICONS -->
@@ -12,18 +59,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <!-- COMPONENT CSS -->
     <link rel="stylesheet" href="assets/styles.css">
-    <title>ETX LAMBDA</title>
-    <meta name="description" content=""> 
-    <meta title="keywords" content="">
+    <title>The spicy palate</title>
+    <meta name="description" content="The Spicy Palate crafts small-batch, authentic Mexican salsas using time-honored recipes and fresh ingredients. Experience handcrafted heat and flavor at local Texas farmers markets.">
+    <meta name="keywords" content="Mexican salsa, small batch salsa, The Spicy Palate, spicy salsa, handmade salsa, salsa verde, salsa roja, mango salsa, Texas farmers markets, artisanal salsa, authentic Mexican food">
+
 </head>
 <body>
 
     <!-- HOME SECTION ================================================================================== -->
     <section class="section home" id="home">
         <div class="home-container container flex-column">
-            <div class="home-logo-container"><img src="assets/img/logo.png" alt="The spicy palate logo"></div>
-            <h1 class="home-title">The spicy palate</h1>
-            <h4 class="home-subtitle">Bringing Fuego to your palate</h4>
+            <div class="home-logo-container bottom"><img src="assets/img/logo.png" alt="The spicy palate logo"></div>
+            <h1 class="home-title bottom">The spicy palate</h1>
+            <h4 class="home-subtitle bottom">Bringing Fuego to your palate</h4>
 
             <div class="button-wrapper">
                 <button class="button home-button"><a href="#intro"><p>Taste the intensity</p></a></button>
@@ -48,11 +96,11 @@
                 <h4 class="intro-alt-title">Our Fuego meter</h4>
 
                 <ul class="meter-container">
-                    <li class="meter-level"><span>1</span></li>
-                    <li class="meter-level"><span>2</span></li>
-                    <li class="meter-level"><span>3</span></li>
-                    <li class="meter-level"><span>4</span></li>
-                    <li class="meter-level"><span>5</span></li>
+                    <li class="meter-level"><span class="top">1</span></li>
+                    <li class="meter-level"><span class="top">2</span></li>
+                    <li class="meter-level"><span class="top">3</span></li>
+                    <li class="meter-level"><span class="top">4</span></li>
+                    <li class="meter-level"><span class="top">5</span></li>
                 </ul>
 
             <div class="button-wrapper">
@@ -67,12 +115,12 @@
        <section class="palate section" id="palate">
             <div class="palate-container container flex-column">
                 
-                <div class="salsa-card-container">
+                <div class="salsa-card-container" id="salsa-verde">
 
                     <div class="salsa-frame br-1">
 
                         <div class="toggle-btn-wrapper">
-                            <button onclick="toggleCard(this)" class="salsa-toggle-btn transition"><i class="ri-add-line"></i></button>
+                            <button onclick="toggleCard(this)" class="salsa-toggle-btn transition hover"><i class="ri-add-line"></i></button>
                         </div>
 
                         <img src="assets/img/salsa-img-1.png" alt="Name of salsa here." class="salsa-img">
@@ -81,25 +129,25 @@
                             <h4 class="salsa-toggle-title">Pairs well with :</h4>
 
                             <ul class="flex-column">
-                                <li><h5>An item here</h5></li>
-                                <li><h5>An item here</h5></li>
-                                <li><h5>An item here</h5></li>
+                                <li><h5>Grilled chicken / beef</h5></li>
+                                <li><h5>Scrambled egg tacos</h5></li>
+                                <li><h5>Enchiladas verdes</h5></li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="salsa-info-frame flex-column txt-al-l">
-                        <h2 class="salsa-info-title">Salsa <span class="title-1">Verde</span></h2>
+                        <h2 class="salsa-info-title bottom">Salsa <span class="title-1">Verde</span></h2>
                         <div class="salsa-meter-container flex-end">
                             <ul>
                                 <li><div class="sq lvl-1"></div></li>
-                                <li></li>
-                                <li></li>
+                                <li><div class="sq lvl-2"></div></li>
+                                <li><div class="sq lvl-3"></div></li>
                                 <li></li>
                                 <li></li>
                             </ul>
 
-                            <span>1</span>
+                            <span>3</span>
                         </div>
 
                         <h6 class="salsa-info-frame-description">
@@ -109,12 +157,12 @@
 
                 </div>
 
-                <div class="salsa-card-container row-reverse">
+                <div class="salsa-card-container row-reverse" id="salsa-roja">
 
                     <div class="salsa-frame br-2 flex-align-right">
 
                         <div class="toggle-btn-wrapper">
-                            <button onclick="toggleCard(this)" class="salsa-toggle-btn transition"><i class="ri-add-line"></i></button>
+                            <button onclick="toggleCard(this)" class="salsa-toggle-btn transition hover"><i class="ri-add-line"></i></button>
                         </div>
 
                         <img src="assets/img/salsa-img-2.png" alt="Name of salsa here." class="salsa-img">
@@ -123,23 +171,23 @@
                             <h4 class="salsa-toggle-title">Pairs well with :</h4>
 
                             <ul class="flex-column">
-                                <li><h5>An item here</h5></li>
-                                <li><h5>An item here</h5></li>
-                                <li><h5>An item here</h5></li>
+                                <li><h5>Pulled pork tacos</h5></li>
+                                <li><h5>Grilled chicken / beef</h5></li>
+                                <li><h5>Quesadillas</h5></li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="salsa-info-frame flex-column">
-                        <h2 class="salsa-info-title">Salsa <span class="title-2">Roja</span></h2>
+                        <h2 class="salsa-info-title bottom">Salsa <span class="title-2">Roja</span></h2>
                         <div class="salsa-meter-container">
-                            <span>3</span>
+                            <span>4</span>
 
                             <ul>
                                 <li><div class="sq lvl-1"></div></li>
                                 <li><div class="sq lvl-2"></div></li>
                                 <li><div class="sq lvl-3"></div></li>
-                                <li></li>
+                                <li><div class="sq lvl-4"></div></li>
                                 <li></li>
                             </ul>
                         </div>
@@ -151,12 +199,12 @@
                     
                 </div>
 
-                <div class="salsa-card-container">
+                <div class="salsa-card-container" id="salsa-mango">
 
                     <div class="salsa-frame br-1">
 
                         <div class="toggle-btn-wrapper">
-                            <button onclick="toggleCard(this)" class="salsa-toggle-btn transition"><i class="ri-add-line"></i></button>
+                            <button onclick="toggleCard(this)" class="salsa-toggle-btn transition hover"><i class="ri-add-line"></i></button>
                         </div>
 
                         <img src="assets/img/salsa-img-1.png" alt="Name of salsa here." class="salsa-img">
@@ -165,15 +213,15 @@
                             <h4 class="salsa-toggle-title">Pairs well with :</h4>
 
                             <ul class="flex-column">
-                                <li><h5>An item here</h5></li>
-                                <li><h5>An item here</h5></li>
-                                <li><h5>An item here</h5></li>
+                                <li><h5>Fish tacos</h5></li>
+                                <li><h5>Grilled shrimp</h5></li>
+                                <li><h5>Pork chops</h5></li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="salsa-info-frame flex-column txt-al-l">
-                        <h2 class="salsa-info-title">Fuego <span class="title-3">Mango</span></h2>
+                        <h2 class="salsa-info-title bottom">Fuego <span class="title-3">Mango</span></h2>
                         <div class="salsa-meter-container flex-end">
                             <ul>
                                 <li><div class="sq lvl-1"></div></li>
@@ -188,7 +236,7 @@
                         </div>
 
                         <h6 class="salsa-info-frame-description">
-                            A thrilling dance of sweet and heat! We combine the tropical sweetness of ripe mango with the fiery punch of habanero peppers. This vibrant salsa offers a uniquely balanced flavor experience that's both incredibly addictive and versatile, whether you're pairing it with grilled chicken or using it to give your snacks a sweet and spicy twist.
+                            A thrilling dance of sweet and heat! We combine the tropical sweetness of ripe mango with the fiery punch of Manzano and scotch bonnet peppers. This vibrant salsa offers a uniquely balanced flavor experience that's both incredibly addictive and versatile, whether you're pairing it with grilled chicken or using it to give your snacks a sweet and spicy twist.
                         </h6>
                     </div>
 
@@ -200,18 +248,18 @@
         <!-- ABOUT SECTION ============================================================================= -->
         <section class="about section" id="about">
             <div class="about-container container flex-column">
-                <h2 class="about-title section-title">Who we are</h2>
+                <h2 class="about-title section-title bottom">Who we are</h2>
 
                 <div class="about-frames-container">
                     <div class="about-img-container br-1"><img src="assets/img/about-image.png" alt="The Spicy palate set up at a local farmers market ready to sell fresh homeade salsas !"></div>
 
                     <div class="about-frame-one flex-column">
                         <h5 class="about-description">
-                            Our passion is crafting traditional Mexican salsas using fresh, high-quality ingredients and time-honored methods. What started as [mention a brief, generic origin - e.g., a family tradition, a love for regional recipes] has grown into a commitment to sharing genuine taste with you.
+                            Meet Judith The <span class="wave-trigger">Salsologist!</span> What started as a family tradition by always having salsa at home and the one bringing salsa to reunions, she decided to expand her audience. Our passion is crafting traditional Mexican salsas using fresh, high-quality ingredients and time-honored methods.
                         </h5>
 
                         <h5 class="about-description">
-                            We believe in the power of authentic ingredients and the art of small-batch preparation to create salsas that are truly special. Every jar is a taste of Mexico's rich culinary heritage.
+                            We are proud to be a family-operated business delivering quality, authentic salsas to the community.
                         </h5>
                     </div>
                 </div>
@@ -226,9 +274,9 @@
         <!-- CONTACT SECTION =========================================================================== -->
         <section class="contact section" id="contact">
             <div class="contact-container container flex-column">
-                <h2 class="contact-title section-title txt-al-l"><span class="title-3">Experience</span> the spicy<br>palate !</h2>
+                <h2 class="contact-title section-title txt-al-l bottom"><span class="title-3">Experience</span> the spicy<br>palate !</h2>
                 <h5 class="contact-subtitle txt-al-l">
-                    We're are at various markets throughout the month-come say hello and taste out salsas !
+                    We're are at various markets throughout the month, come say hello and taste out salsas !
                 </h5>
 
                 <div class="contact-buttons-container">
@@ -237,34 +285,33 @@
                     </div>
 
                     <ul class="social-links">
-                        <li class="social-link"><a href="#"></a><i class="ri-instagram-fill"></i></li>
-                        <li class="social-link"><a href="#"></a><i class="ri-facebook-box-fill"></i></li>
-
+                        <li class="social-link instagram hover"><a href="https://www.instagram.com/thespicypalateusa" target="_blank"><i class="ri-instagram-fill"></i></a></li>
+                        <li class="social-link facebook hover"><a href="https://www.facebook.com/thespicypalateusa" target="_blank"><i class="ri-facebook-box-fill"></i></a></li>
                     </ul>
                 </div>
 
         
 
                 <ul class="locations-container grid" id="locations">
-                    <li class="location-card flex-column">
-                        <h3 class="location-date">Sat May 17th</h3>
-                        <h5 class="location-name">Cypress farmers market</h5>
-                        <h6 class="location-address">1100 Something Rd.<br>Cypress Tx, 77433</h6>
-                        <h5 class="location-time">From 10am to 3pm</h5>
+                    <li class="location-card flex-column top">
+                        <h3 class="location-date">Sat June 7th</h3>
+                        <h5 class="location-name">Sugarland farmers market</h5>
+                        <h6 class="location-address">234 Matlage way.<br>Sugarland Tx, 77478</h6>
+                        <h5 class="location-time">From 9am to 1pm</h5>
                     </li>
 
-                    <li class="location-card flex-column">
-                        <h3 class="location-date">Sat May 17th</h3>
+                    <li class="location-card flex-column top">
+                        <h3 class="location-date">Sun June 8th</h3>
                         <h5 class="location-name">Cypress farmers market</h5>
-                        <h6 class="location-address">1100 Something Rd.<br>Cypress Tx, 77433</h6>
-                        <h5 class="location-time">From 10am to 3pm</h5>
+                        <h6 class="location-address">10519 Fry Rd.<br>Cypress Tx, 77433</h6>
+                        <h5 class="location-time">From 10:30am to 1:30pm</h5>
                     </li>
 
-                    <li class="location-card flex-column">
-                        <h3 class="location-date">Sat May 17th</h3>
-                        <h5 class="location-name">Cypress farmers market</h5>
-                        <h6 class="location-address">1100 Something Rd.<br>Cypress Tx, 77433</h6>
-                        <h5 class="location-time">From 10am to 3pm</h5>
+                    <li class="location-card flex-column top">
+                        <h3 class="location-date">More to come !</h3>
+                        <h5 class="location-name"></h5>
+                        <h6 class="location-address"></h6>
+                        <h5 class="location-time">Stay tuned !</h5>
                     </li>
                 </ul>
             </div>
@@ -295,8 +342,7 @@
     <!-- GSAP JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <!-- SWIPER JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
     <!-- PAGE SPECIFIC JS -->
     <script src="assets/main.js"></script>
 </body>

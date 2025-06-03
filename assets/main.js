@@ -47,16 +47,58 @@ function toggleCard(buttonElement) {
 
 // SCROLL REVEAL JS
 const sr = ScrollReveal({
-  distance: '50px',
-  duration: 2500,
+  distance: '100px',
+  duration: 2000,
 })
 
-sr.reveal(``,{
+sr.reveal(`.top`,{
   origin: 'top',
-  interval: 450,
+  interval: 150,
 })
 
-sr.reveal(`.sq`,{
+sr.reveal(`.sq, .bottom`,{
   origin: 'bottom',
   interval: 150,
 })
+
+
+// Split the word "Salsoligist" into individual letters for wave effect
+const waveSplit = new SplitType('.wave-trigger', { types: 'chars' });
+
+gsap.set('.wave-trigger .char', {
+  display: 'inline-block',
+  y: 0,
+  color: '#141414',
+});
+
+const waveTimeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.wave-trigger',
+    start: 'center center',
+    toggleActions: 'play none none none',
+    once: true,
+  }
+});
+
+waveTimeline.to('.wave-trigger .char', {
+  y: -20,
+  color: '#B10D09',
+  stagger: {
+    each: 0.07,
+    from: 'start',
+    ease: 'sine.inOut',
+  },
+  duration: 0.4,
+  ease: 'power2.out',
+})
+.to('.wave-trigger .char', {
+  y: 0,
+  color: '#141414',
+  stagger: {
+    each: 0.07,
+    from: 'start',
+    ease: 'sine.inOut',
+  },
+  duration: 0.4,
+  ease: 'power2.inOut',
+}, "+=0.1");

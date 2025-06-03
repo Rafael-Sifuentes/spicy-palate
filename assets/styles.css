@@ -223,6 +223,10 @@ img{
     transition: all .3s ease-in-out;
 }
 
+.button:hover{
+    transform: translateY(-5px);
+}
+
 .button:active{
     left: 0;
     bottom: 0;
@@ -244,6 +248,14 @@ img{
     background-color: var(--accent-color);
     border-radius: 64px;
 }
+
+.hover{
+    transition: all .3s ease-in-out;
+}
+
+.hover:hover{
+    transform: translateY(-5px);
+}
 /* -------- */
 
 /*-============================================================================================- */
@@ -251,6 +263,7 @@ img{
 
 /* HOME SECTION ===============================================================================- */
 .home{
+    padding-top: var(--gap-5);
     padding-bottom: var(--gap-6);
 }
 
@@ -676,6 +689,11 @@ img{
     font-size: var(--h6-font-size);
 }
 
+.about-description span{
+    font-family: var(--title-font);
+    white-space: nowrap;
+}
+
 .about-button{
     align-self: center;
 }
@@ -746,13 +764,44 @@ img{
 }
 
 .social-links{
+    position: relative;
     display: flex;
     gap: var(--gap-4);
+    z-index: 10;
 }
 
 .social-link i{
     font-size: 4rem;
-    color: var(--text-color-w);
+}
+
+.instagram{
+    background: linear-gradient(
+        45deg,
+        #f09433 0%,   /* Gold/Orange - start */
+        #e6683c 25%,  /* Orange-Red */
+        #dc2743 50%,  /* Red */
+        #cc2366 75%,  /* Pink-Magenta */
+        #bc1888 100%  /* Deep Purple-Pink - end */
+    );
+    -webkit-background-clip: text; /* For Webkit browsers (Chrome, Safari) */
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* For Webkit browsers */
+    color: transparent; /* Standard property for text transparency */
+    cursor: pointer;
+}
+
+.facebook{
+    background: linear-gradient(
+        45deg,
+        #3b5998 0%,   /* Standard Facebook Blue */
+        #4267B2 50%,  /* Slightly lighter/more vibrant blue */
+        #2d4a8e 100%  /* Slightly darker blue */
+    );
+    -webkit-background-clip: text; /* For Webkit browsers (Chrome, Safari) */
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* For Webkit browsers */
+    color: transparent; /* Standard property for text transparency */
+    cursor: pointer;
 }
 
 .locations-container{
