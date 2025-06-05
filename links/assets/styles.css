@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css2?family=Frijole&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* VARIABLE CSS================================================================================- */
+/*-============================================================================================- */
+:root{
+
+    /* COLORS=---------------- */
+    --primary-color: #B10D09;
+    --accent-color: #6F0300;
+    --text-color-w: #FFF0E6;
+    --text-color-b: #141414;
+    --container-color: #8BC002;
+    --body-color: #141414;
+    /* ======================= */
+
+
+    /* FONT & TYPOGRAPHY====== */
+    --body-font: 'Montserrat', sans-serif;
+    --title-font: 'Frijole', system-ui;
+    --h1-font-size: 5.61rem;
+    --h2-font-size: 4.209rem;
+    --h3-font-size: 3.157rem;
+    --h4-font-size: 2.369rem;
+    --h5-font-size: 1.777rem;
+    --h6-font-size: 1.333rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.75rem;
+
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+    --font-black: 900;
+    /* ======================= */
+
+
+    /* MARGINS & PADDING ===== */
+    --gap-1: 1rem; /*---------------16px*/
+
+    --gap-2: 1.5rem; /*-------------24px*/
+
+    --gap-3: 2rem; /*---------------32px*/
+
+    --gap-4: 3rem; /*---------------48px*/
+
+    --gap-5: 4rem; /*---------------64px*/
+
+    --gap-6: 5rem; /*---------------80px*/
+
+    --gap-7: 8rem; /*--------------128px*/
+    /* ======================= */
+
+
+    /* MISC=================== */
+    --z-fixed: 15;
+    /* ======================= */
+
+}
+/*-============================================================================================- */
+
+/* HTML BASE===================================================================================- */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: var(--body-font);
+    background-image: url('img/texture-2.jpg');
+    background-repeat: repeat;
+    background-size: auto;
+}
+
+h1{
+    font-size: var(--h1-font-size);
+}
+
+h2{
+    font-size: var(--h2-font-size);
+}
+
+h3{
+    font-size: var(--h3-font-size);
+}
+
+h4{
+    font-size: var(--h4-font-size);
+}
+
+h5{
+    font-size: var(--h5-font-size);
+}
+
+h6{
+    font-size: var(--h6-font-size);
+}
+
+p{
+    font-size: var(--normal-font-size);
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    border: none;
+    background-color: transparent;
+}
+
+img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    height: auto;
+}
+/*-============================================================================================- */
+
+/* RESPONSIVE BREAKPOINTS======================================================================- */
+
+/* FOR SML MOBILE */
+@media screen and (max-width : 389px){
+    .container{
+        margin: 0 1rem;
+    }
+}
+
+/* FOR MOBILE */
+@media screen and (min-width: 390px){
+    .container{
+        max-width: 358px;
+        margin: 0 auto;
+    }
+}
+
+/* FOR TABLET */
+@media screen and (min-width: 744px){
+    .container{
+        max-width: 680px;
+        margin: 0 auto;
+    }
+}
+
+/* FOR DESKTOP */
+@media screen and (min-width: 1100px){
+    .container{
+        max-width: 1392px;
+        margin: 0 auto;
+    }
+}
+/*-============================================================================================- */
+
+/*-REUSABLE CSS CLASSES========================================================================- */
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.responsive-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.grid{
+    display: grid;
+}
+
+.section{
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title{
+    font-size: var(--h2-font-size);
+    font-family: var(--title-font);
+}
+
+.p-text{
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-semi-bold);
+}
+
+.transition{
+    transition: all .4s ease-in-out;
+}
+
+.br-1{
+    border-radius: 32px 80px 80px 32px;
+}
+
+.br-2{
+    border-radius: 80px 32px 32px 80px;
+}
+/*-============================================================================================- */
+
+/* CSS COMPONENTS =============================================================================- */
+
+/* BUTTONS */
+
+.button{
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    height: 80px;
+    width: 330px;
+    border-radius: 64px;
+    color: var(--text-color-w);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease-in-out;
+}
+
+.button:active{
+    left: 0;
+    bottom: 0;
+}
+
+.button p{
+    font-family: var(--title-font);
+    font-size: var(--h6-font-size);
+}
+
+.button a{
+    color: var(--text-color-w);
+}
+
+.button-wrapper{
+    position: relative;
+    height: 80px;
+    width: 330px;
+    background-color: var(--accent-color);
+    border-radius: 64px;
+}
+/* -------- */
+
+/*-============================================================================================- */
+
+/* LINKS HOME SECTION =========================================================================- */
+.links-home{
+    padding-top: var(--gap-4);
+    padding-bottom: var(--gap-4);
+    background-image: url('img/texture-1.jpg');
+    background-repeat: repeat;
+    background-size: auto;
+    color: var(--text-color-b);
+}
+
+.links-home-container{
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-2);
+}
+
+.home-links-logo{
+    position: relative;
+    height: 127px;
+    width: 98px;
+}
+
+.links-home h3{
+    font-family: var(--title-font);
+    text-align: center;
+}
+
+.social-links{
+    position: relative;
+    display: flex;
+    gap: var(--gap-4);
+    z-index: 10;
+}
+
+.social-link i{
+    font-size: 4rem;
+}
+
+.instagram{
+    background: linear-gradient(
+        45deg,
+        #f09433 0%,   /* Gold/Orange - start */
+        #e6683c 25%,  /* Orange-Red */
+        #dc2743 50%,  /* Red */
+        #cc2366 75%,  /* Pink-Magenta */
+        #bc1888 100%  /* Deep Purple-Pink - end */
+    );
+    -webkit-background-clip: text; /* For Webkit browsers (Chrome, Safari) */
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* For Webkit browsers */
+    color: transparent; /* Standard property for text transparency */
+    cursor: pointer;
+}
+
+.facebook{
+    background: linear-gradient(
+        45deg,
+        #3b5998 0%,   /* Standard Facebook Blue */
+        #4267B2 50%,  /* Slightly lighter/more vibrant blue */
+        #2d4a8e 100%  /* Slightly darker blue */
+    );
+    -webkit-background-clip: text; /* For Webkit browsers (Chrome, Safari) */
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* For Webkit browsers */
+    color: transparent; /* Standard property for text transparency */
+    cursor: pointer;
+}
+
+.locations-container{
+    width: 100%;
+    gap: var(--gap-2);
+    margin-top: var(--gap-7);
+}
+/*-============================================================================================- */
+
+/* LINKS SECTION ==============================================================================- */
+.links{
+    padding-top: var(--gap-7);
+    padding-bottom: var(--gap-7);
+}
+
+.links::before{
+    content: ''; 
+    position: absolute;
+    top: 0px; 
+    width: 100%;
+    height: 40px; 
+    
+    background-image: url('img/texture-1.jpg'); 
+    background-repeat: repeat;
+    background-size: auto; 
+    z-index: 1;
+
+    clip-path: polygon(
+        0% 0%,     /* Top-left corner */
+        100% 0%,   /* Top-right corner */
+        100% 100%, /* Bottom-right corner */
+        85% 15%,   /* Point 1 for zigzag (adjust % to change steepness/width of triangles) */
+        70% 100%,  /* Point 2 for zigzag */
+        55% 15%,   /* Point 3 */
+        40% 100%,  /* Point 4 */
+        25% 15%,   /* Point 5 */
+        10% 100%,  /* Point 6 */
+        0% 0%      /* Back to origin, closing the zig-zag. Keep this point to make it connected to the top-left */
+    );
+}
+
+.links::after{
+    content: ''; /* Required for pseudo-elements */
+    position: absolute;
+    bottom: 0; /* Position at the very top of the section */
+    width: 100%;
+    height: 40px; /* Adjust this to control the height of your separator's peaks/valleys */
+    
+    /* Apply your background texture */
+    background-image: url('img/texture-1.jpg'); 
+    background-repeat: repeat; /* Tile the texture across the separator */
+    background-size: auto; /* Uses the texture's original size for tiling */
+    z-index: 1;
+    clip-path: polygon(
+        0% 100%,   /* Bottom-left corner */
+        100% 100%, /* Bottom-right corner */
+        100% 0%,   /* Top-right corner */
+        85% 85%,   /* Point 1 for zigzag (adjust % to change steepness/width of triangles) */
+        70% 0%,    /* Point 2 for zigzag */
+        55% 85%,   /* Point 3 */
+        40% 0%,    /* Point 4 */
+        25% 85%,   /* Point 5 */
+        10% 0%,    /* Point 6 */
+        0% 100%    /* Back to origin, closing the zig-zag */
+    );
+}
+
+.links-list{
+    gap: var(--gap-4);
+}
+
+.links-container{
+    gap: var(--gap-5);
+}
+
+.links-list .button-wrapper:nth-child(1){
+    background-color: #969696;
+}
+
+.links-list .button-wrapper:nth-child(1) .button{
+    background-color: #FFF0E6;
+}
+
+.links-list .button-wrapper:nth-child(1) a{
+    color: var(--text-color-b);
+}
+
+.links-list .button-wrapper:nth-child(3){
+    background-color: #3C5400;
+}
+
+.links-list .button-wrapper:nth-child(3) .button{
+    background-color: var(--container-color);
+}
+
+.links-list .button-wrapper:nth-child(3) a{
+    color: var(--text-color-b);
+}
+
+.links-list .button-wrapper:nth-child(4) .button{
+    background-color: var(--primary-color);
+}
+
+.links-list .button-wrapper:nth-child(5) .button{
+    background-color: #C06E02;
+}
+
+.links-list .button-wrapper:nth-child(5){
+    background-color: #6E3F00;
+}
+
+.location-card{
+    height: 420px;
+    background-image: url(img/texture-1.jpg);
+    text-align: center;
+    gap: var(--gap-2);
+    color: var(--text-color-b);
+    padding: 0 2rem;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.location-date{
+    font-family: var(--title-font);
+    font-size: var(--h4-font-size);
+}
+
+.location-address{
+    font-weight: var(--font-medium);
+}
+
+.location-time{
+    font-family: var(--title-font);
+    font-size: var(--h6-font-size);
+}
+
+.next-event{
+    font-family: var(--title-font);
+    text-align: center;
+    color: var(--text-color-w);
+    font-size: var(--h5-font-size);
+}
+/*-============================================================================================- */
+
+/* LINKS FOOTER SECTION ========================================================================- */
+.links-footer{
+    padding-top: var(--gap-4);
+    padding-bottom: var(--gap-4);
+    background-image: url('img/texture-1.jpg');
+    background-repeat: repeat;
+    background-size: auto;
+    color: var(--text-color-b);
+}
+
+.footer-container{
+    gap: var(--gap-4);
+    align-items: center;
+    text-align: center;
+}
+
+.footer-img-container{
+    position: relative;
+    height: 130px;
+    width: 105px;
+}
+
+.footer-title{
+    font-family: var(--title-font);
+    font-size: var(--h4-font-size);
+}
+
+.etx-signature{
+    border-top: 1px solid var(--text-color-b);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: var(--gap-2);
+}
+
+.etx-signature a{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-color-b) !important;
+}
+
+.etx-signature p{
+    font-size: var(--small-font-size);
+}
+
+.etx-signature .img-container{
+    width: 28px;
+    height: 24px;
+    position: relative;
+}
+/*-============================================================================================- */
