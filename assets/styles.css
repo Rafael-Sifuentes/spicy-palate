@@ -889,6 +889,10 @@ img{
     text-align: center;
 }
 
+.footer-container a{
+    color: var(--text-color-b);
+}
+
 .footer-img-container{
     position: relative;
     height: 130px;
