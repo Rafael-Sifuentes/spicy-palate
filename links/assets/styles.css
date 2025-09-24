@@ -440,6 +440,18 @@ img{
     background-color: var(--primary-color);
 }
 
+.links-list .button-wrapper:nth-child(9){
+    background-color: #969696;
+}
+
+.links-list .button-wrapper:nth-child(9) .button{
+    background-color: #FFF0E6;
+}
+
+.links-list .button-wrapper:nth-child(9) a{
+    color: var(--text-color-b);
+}
+
 .location-card{
     height: 420px;
     background-image: url(img/texture-1.jpg);
